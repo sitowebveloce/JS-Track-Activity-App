@@ -1,0 +1,234 @@
+:root{
+    --first: #FBEEDF;
+    --second: #A2DEBD;
+    --third: #8384DF;
+    --fourth: #B79FF1;
+    --fifth: #F9AFEC;
+    --sixth: #FFD5FA;
+    --seventh: #3A6AD0;
+    --started : #fa5b5b;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'AbrilFatface';
+    src: url(/fonts/AbrilFatface-Regular.ttf) format("truetype");
+}
+body{
+    background: #111;
+    font-family: 'AbrilFatface';
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+}
+.clock-container{
+    position: relative;
+    margin: 40px auto;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: var(--seventh);
+}
+h1.title{
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: var(--sixth);
+}
+h3.subtitle{
+    color: var(--first);
+    margin: 5px auto;
+}
+.total-time{
+    color: var(--first);
+}
+.time-box{
+    position: relative;
+    width:210px;
+    height:210px;
+    background: var(--second);
+    border-radius: 50%;
+    z-index: 1;
+}
+.time-box.active{
+    background: var(--started);
+}
+.time{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: var(--seventh);
+    font-size: 2.6rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    pointer-events: none;
+}
+.time.active{
+   color: var(--first);
+}
+/* SVGS  */
+svg.svg-seconds{  
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    fill: var(--second);
+    stroke: var(--third);
+    stroke-width: 0.5;
+    stroke-dasharray: 63;
+}
+svg.svg-seconds.active{ 
+    stroke: var(--started);
+}
+
+svg.svg-minutes{  
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    fill: transparent;
+    stroke: var(--fourth);
+    stroke-width: 0.6;
+    stroke-dasharray: 63;
+}
+
+svg.svg-hours{  
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    fill: transparent;
+    stroke: var(--seventh);
+    stroke-width: 3;
+    stroke-dasharray: 63;
+}
+@media(max-width: 768px){
+    .time{
+        font-size: 2.2rem;
+    }
+    .clock-container{
+        width: 250px;
+        height: 250px;
+    }
+    svg.svg-hours{  
+        width: 250px;
+        height: 250px;
+    }
+    svg.svg-seconds{  
+        width: 300px;
+        height: 300px;
+    }
+    svg.svg-minutes{  
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* CONTROLS */
+.controls{
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button.start,
+button.stop{
+    cursor: pointer;
+    background: var(--seventh);
+    min-width: 70px;
+    padding: 5px 10px;
+    border:1px solid var(--first);
+    border-radius: 5px;
+    box-shadow: 4px 4px 0 var(--first);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--first);
+    transition: 400ms ease;
+}
+button.start:hover,
+button.stop:hover{
+    transform: translate(4px,4px);
+    box-shadow: 2px 2px 0 var(--first);
+}
+
+.activities{
+    margin: 10px auto;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 10px;
+}
+
+div.card{
+    position: relative;
+    width: 170px;
+    height: 80px;
+    background: var(--first);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 10px 0;
+    border: 2px solid var(--second);
+    box-shadow: 4px 4px 0 var(--second);
+    transition: 400ms ease-in-out;
+}
+@media(max-width: 768px){
+    div.card{
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+div.card:hover{
+    transform: translate(4px,4px);
+    border: 1px solid green;
+    box-shadow: 2px 2px 0 green;
+}
+input.act-name{
+    outline: none;
+    border: none;
+    background: transparent;
+    color: green;
+    padding: 2px 1px;
+    width: 100%;
+}
+span.span-total-time{
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--seventh);
+}
+.created-at{
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: var(--seventh);
+}
+button.btn-delete{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: rgb(255, 60, 0);
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1px;
+    transition: 400ms ease;
+}
+button.btn-delete:hover{
+    background: rgb(255, 60, 0);
+    color: #fff;
+}

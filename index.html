@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Clock</title>
+    <link rel="icon" type="image/png" href="./imgs/time.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <div class="container flex">
+        <h1 class="title">Time Circle</h1>
+        <h3 class="subtitle">Track Acts</h3>
+        <div class="total-time">0</div>
+   <!-- CLOCK  -->
+    <div class="clock-container flex">
+        <svg class="svg-seconds" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"/></svg>
+        <svg class="svg-minutes" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"/></svg>
+        <svg class="svg-hours" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"/></svg>
+        
+        <div class="time-box">
+            <div class="time">00:00:00</div>
+        </div>
+    </div>
+    <!-- CONTROLS  -->
+    <div class="controls">
+        <div class="buttons">
+            <button class="start">Start</button>
+            <button class="stop">Stop</button>
+        </div>
+        <div class="activities"></div>
+    </div>
+
+    <!-- END CONTAINER  -->
+</div>    
+</body>
+</html>
