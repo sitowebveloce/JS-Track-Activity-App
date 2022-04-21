@@ -28,7 +28,7 @@ Press the Start button.
 
 ### Video Guide Link
     
-[Video Guide Part 1](https://youtu.be/k6YVn2JlLQk)
+[Video Guide Part 1](https://youtu.be/HBTMzvW4prQ)
 [Video Guide Part 2](https://youtu.be/n1s7xargKHs)
 
 ## License
